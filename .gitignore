@@ -1,0 +1,22 @@
+# Ignore node_modules
+node_modules/
+
+# Ignore log files and directories
+logs/
+*.log
+
+# Ignore build directories
+dist/
+build/
+
+# Ignore environment variable files
+.env
+
+# Ignore system files
+.DS_Store
+
+# Ignore IDE files
+.vscode/
+.idea/
+
+# You can add other entries based on your project's requirements

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: "DM Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .navbar {
+            position:fixed;
+            left: 0;
+            top:0;      
+            width: 100%; 
+            height: 70px;     
+            background-color: #FCFCFD;             
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            z-index: 1000;
+        }
+        .navbar > div {
+            display: flex;
+            padding: 20px 10vw;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navlinks{
+            color: #000;
+            text-decoration: none;
+            padding: 20px;
+        }
+        .primary-button {
+            background-color: #00DF8F;
+            padding: 10px;
+            color: #FFFFFF;
+            border-radius:8px;
+            border: 0;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            font-size: medium;
+        }
+        .hero {
+            margin-top:70px;
+            height: 600px;
+            width: 100%;            
+        }
+        .background-text {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;            
+            font-size: 20;
+            color: #B1AEB1;
+            opacity: 0.5;
+            line-height: 250%;
+            text-align: justify;
+            text-overflow:clip;
+            z-index: -1;
+        }
+        .hero > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 100%;
+            padding: 0vh 10vw;
+        }  
+        .text-backgroun-white {
+            background-color: #FFFFFF;
+            box-shadow: 0px 0px 24px rgba(255, 255, 255, 1);
+        }     
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+            color: #000;
+            text-align: center;            
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);                                    
+        }
+        h3 {
+            font-size: 24px;
+            font-weight: 400;
+            color: #000;
+            text-align: center;            
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        .job-seekers {
+            height: fit-content;
+            width: 100%;
+            background-color: #11211C;
+        }
+        h2{
+            font-size: 36px;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-align: center;            
+        }
+        .job-seekers > div {
+            display: flex;
+            /* justify-content: space-between; */
+            /* align-items: center; */
+            padding: 0 10vw;
+            gap:20px;
+        }
+        li {
+            font-size: 24px;
+            font-weight: 400;
+            color: #FFFFFF;                        
+        }
+        li > h3 {
+            text-align: left;
+        }
+        /* .job-seekers-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            width: 50%;            
+        }         */                
+        .job-seekers-left {
+            display:flex;
+            flex-direction: column;
+            width: 50%;
+            height: 100%;
+            justify-content: space-between;
+        }
+        .job-seekers-right {
+            display:flex;
+            flex-direction: column;                        
+        }
+        .job-seekers-right-top {
+            display: flex;    
+            flex-direction: column;                    
+            align-items: center;
+            width: 100%; 
+            flex:2;          
+        }
+        .job-seekers-right-bottom {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%; 
+            height: 100%;  
+            flex:1;                     
+        }
+        .toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;            
+            margin:5px 0px;
+            background-color: #FFFFFF;
+            border-radius: 200px;            
+        }
+        .toggle > h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #000;
+            margin: 0;
+            padding: 16px 20px;
+        }
+        .for-employers {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 80vh;
+
+        }
+        .for-employers-top {
+            display:flex;
+            gap: 30px;
+            justify-content: space-between;            
+            padding: 0 10vw;
+        }
+        .footer {
+            height: 20vh;
+            background-color: #11211C;
+        }
+        #for-employers-top-left {
+            display:flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100%;  
+            width: 50%;                     
+        }
+        #for-employers-top-right {
+            display:flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;   
+            width: 50%;          
+        }
+        .secondary-button {
+            background-color: #3B50D8;
+            padding: 10px;
+            color: #fff;
+            border-radius:8px;
+            border: 0;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            font-size: medium;
+        }
+        .for-employers-bottom {
+            background-color: #3B50D8;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            margin: 0 10vw;
+        }
+        .for-employers-top > *{            
+            text-align: center;
+        }
+        .for-employers-bottom > *{
+            color: #fff;
+            text-align: center;
+        }
+        .for-employers-bottom > div {
+            display: flex;
+            gap: 20px;
+            justify-content: space-around;
+            align-items: center;            
+            padding: 0 3vw;
+        }
+        .for-employers-bottom > div > div >h4 {
+            color:#00DF8F;
+            font-size: 24px;
+            margin: 0;
+        }
+        .footer {
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10vw;
+        }
+        .footer > div > h4 {
+            color: #fff;
+            font-size: 16px;
+            margin: 0;
+            padding: 0 5px;
+        }
+        #footer-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;            
+        }
+        .logo {
+            height: 30px;}
+    </style>
+</head>
+<body style="margin:0">
+    <section class="navbar">
+        <div>
+            <img class="logo" src="./assets/images/Quintis_logo.svg"/>
+            <div>
+                <a href="" class="navlinks">For Job-Seekers</a>
+                <a href="" class="navlinks">For Employers</a>
+                <a href="" class="navlinks">Pricing</a>
+            </div>
+            <button class="primary-button">
+                Log In/ Sign Up
+            </button>
+        </div>
+    </section>
+    <section class="hero">
+        <p class="background-text">
+            Applying through LinkedIn all day?  Sending applications into a blackhole.  How do I standout from hundreds of others?  I’m an excellent coder, how do I show that?  I really want to get into my favourite company!  If only I could show them that I’m better than others.  I hate playing the numbers game.  Applying through LinkedIn all day?  Sending applications into a blackhole.  How do I standout from hundreds of others?  I’m an excellent coder, how do I show that?  I really want to get into my favourite company!  If only I could show them that I’m better than others.  I hate playing the numbers game.  Applying through LinkedIn all day?  Sending applications into a blackhole.  How do I standout from hundreds of others?  I’m an excellent coder, how do I show that?  I really want to get into my favourite company!  If only I could show them that I’m better than others.  I hate playing the numbers game.  Applying through LinkedIn all day?  Sending applications into a blackhole.  How do I standout from hundreds of others?  I’m an excellent coder, how do I show that?  I really want to get into my favourite company!  If only I could show them that I’m better than others.  I hate playing the numbers game.  Applying through LinkedIn all day?  Sending applications into a blackhole.  How do I standout from hundreds of others?  I’m an excellent coder, how do I show that?  I really want to get into my favourite company!  If only I could show them that I’m better than others.  I hate playing the numbers game.  Applying through LinkedIn all day?  Sending applications into a blackhole.  How do I standout from hundreds of others?  I’m an excellent coder, how do I show that?  I really want to get into my favourite company!  If only I could show them that I’m better than others.  I hate playing the numbers game.  Applying through LinkedIn all day?  Sending applications into a blackhole.  How do I standout from hundreds of others?  I’m an excellent coder, how do I show that?  I really want to get into my favourite company!  If only I could show them that I’m better than others.  I hate playing the numbers game.  Applying through LinkedIn all day?  Sending applications into a blackhole.  How do I standout from hundreds of others?  I’m an excellent coder, how do I show that?  I really want to get into my favourite company!  If only I could show them that I’m better than others.  I hate playing the numbers game.  Applying through LinkedIn all day?  Sending applications into a blackhole.  How do I standout from hundreds of others?  I’m an excellent coder, how do I show that?  I really want to get into my favourite company!  If only I could show them that I’m better than others.  I hate playing the numbers game.  Applying through LinkedIn all day?  Sending applications into a blackhole.  How do I standout from hundreds of others?  I’m an excellent coder, how do I show that?  I really want to get into my favourite company!  If only I could show them that I’m better than others.  I hate playing the numbers game.  Applying through LinkedIn all day?  Sending applications into a blackhole.  How do I standout from hundreds of others?  I’m an excellent coder, how do I show that?  I really want to get into my favourite company!  If only I could show them that I’m better than others.  I hate playing the numbers game.  Applying through LinkedIn all day?  Sending applications into a blackhole.  How do I standout from hundreds of others?  I’m an excellent coder, how do I show that?  I really want to get into my favourite company!  If only I could show them that I’m better than others.  I hate playing the numbers game.  Applying through LinkedIn all day?  Sending applications into a blackhole.  How do I standout from hundreds of others?  I’m an excellent coder, how do I show that?  I really want to get into my favourite company!  If only I could show them that I’m better than others.  I hate playing the numbers game.  Applying through LinkedIn all day?  Sending applications into a blackhole.  How do I standout from hundreds of others?  I’m an excellent coder, how do I show that?  I really want to get into my favourite company!  If only I could show them that I’m better than others.  I hate playing the numbers game.
+        </p>
+        <div>
+            <h1 class="text-backgroun-white">Hundreds of Job Applications<br/> and only a handful of interviews?</h1>
+            <h3 class="text-backgroun-white">Achieve 8 times better application-to-interview ratio than LinkedIn</h3>
+            <div>
+                <button class="primary-button">
+                    Get Started
+                </button>
+                <h5 class="text-backgroun-white" style="text-align: center; margin-top: 5px; ">It's Free</h5>
+            </div>
+        </div>
+    </section>
+    <section class="job-seekers">             
+        <h2 style="margin: 0;padding: 20px 5px">Skip the line of Resume-only applicants</h2>                    
+        <div >
+            <div class="job-seekers-left">
+                <ol>
+                    <li><h3 style="color: #fff; ">Show your skills by taking coding assessments.</h3></li>
+                    <li><h3 style="color: #fff; ">Create a rich profile.</h3></li>
+                    <li><h3 style="color: #fff; ">Apply to companies with the same assessment results.</h3></li>                    
+                </ol>
+                <img src="./assets/images/User_Profile.png" width="100%"/>
+            </div>
+            <div class="job-seekers-right">
+                <div class="job-seekers-right-top">
+                    <div class="toggle">
+                        <h4>Who is Quintis For?</h4>
+                        <h4>+</h4>
+                    </div>
+                    <div class="toggle">
+                        <h4>Is Quintis Free?</h4>
+                        <h4>+</h4>
+                    </div>
+                    <div class="toggle">
+                        <h4>How do coding assessments work?</h4>
+                        <h4>+</h4>
+                    </div>
+                    <div class="toggle">
+                        <h4>What if I do badly on a test or am caught cheating?</h4>
+                        <h4>+</h4>
+                    </div>
+                    <div class="toggle">
+                        <h4>How will I be contacted for interviews?</h4>
+                        <h4>+</h4>
+                    </div>
+                </div>
+                <div class="job-seekers-right-bottom">
+                    <button class="primary-button">
+                        Create Profile
+                    </button>
+                    <h5 style="color:#fff; text-align: center; margin-top: 5px; ">It's Free</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="for-employers">
+        <h2 style="color: #000; margin: 0;padding: 20px 5px">Hiring for an entry-level software role?</h2>
+        <div class="for-employers-top">
+            <div id="for-employers-top-left">
+                <h3>Is this what your hiring process looks like?</h3>
+                <h4>Step 1: Go through hundreds of similar resumes.</h4>
+                <h4>Step 2: Send a few of them an online coding assessment</h4>
+                <h4>Step 3: Wait for candidates to take the test</h4>
+            </div>
+            <div id="for-employers-top-right">
+                <h3 style="margin:0">Save Time. Save Costs.</h3>
+                <h2 style="color:#000; margin:0">Hire Better.</h2>
+                <div>
+                    <button class="primary-button" style="margin: 0 10px;">Log In / Sign Up</button>
+                    <button class="secondary-button">Schedule a Call</button>
+                </div>
+            </div>
+        </div>
+        <div class="for-employers-bottom">
+            <h3>What you get with Quintis</h3>
+            <div>
+                <div>
+                    <h4>Pre-assessed Candidates</h4>
+                    <p>Candidates voluntarily take coding assessments before applying to demonstrate their skills.</p>
+                </div>
+                <div>
+                    <h4>Detailed Reports</h4>
+                    <p>View detailed coding assessment reports with video playback and cheating detection.</p>
+                </div>
+                <div>
+                    <h4>Zero set-up</h4>
+                    <p>If you have posted your jobs on LinkedIn, you won’t have to add them again on Quintis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <img class="logo" src="./assets/images/Quintis_logo.svg"/>
+        <img class="logo" src="./assets/images/instagramlogo.svg"/>
+        <div id="footer-nav">
+            <h4>c Quintis Inc.</h4>
+            <h4>Privacy Policy</h4>
+            <h4>Terms of Use</h4>
+            <h4>Contact</h4>
+        </div>
+    </section>        
+</body>
+</html>
